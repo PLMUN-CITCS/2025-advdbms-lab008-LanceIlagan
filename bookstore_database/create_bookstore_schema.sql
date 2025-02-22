@@ -9,7 +9,7 @@ CREATE TABLE `Books` (
 
 -- Authors Table [cite: 11]
 CREATE TABLE `Authors` (
-   `AuthorID` INT PRIMARY KEY,
+   `AuthorID` INT PRIMARY KEY AUTO_INCREMENT,
    `Name` VARCHAR(255) NOT NULL
 );
 
@@ -24,7 +24,7 @@ CREATE TABLE `BookAuthors` (
 
 -- Customers Table [cite: 11]
 CREATE TABLE `Customers` (
-   `CustomerID` INT PRIMARY KEY,
+   `CustomerID` INT PRIMARY KEY AUTO_INCREMENT,
    `Name` VARCHAR(255) NOT NULL,
    `Email` VARCHAR(255) NOT NULL
 );
@@ -46,3 +46,4 @@ CREATE TABLE `OrderDetails` (
    FOREIGN KEY (`OrderID`) REFERENCES `Orders`(`OrderID`),
    FOREIGN KEY (`ISBN`) REFERENCES `Books`(`ISBN`)
 );
+
