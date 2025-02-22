@@ -1,5 +1,7 @@
 CREATE DATABASE `BookstoreDB`;
+
 USE `BookstoreDB`;
+
 -- Books Table [cite: 11]
 CREATE TABLE `Books` (
    `ISBN` VARCHAR(20) PRIMARY KEY,
@@ -9,7 +11,7 @@ CREATE TABLE `Books` (
 
 -- Authors Table [cite: 11]
 CREATE TABLE `Authors` (
-   `AuthorID` INT PRIMARY KEY AUTO_INCREMENT,
+   `AuthorID` INT PRIMARY KEY,
    `Name` VARCHAR(255) NOT NULL
 );
 
@@ -24,14 +26,14 @@ CREATE TABLE `BookAuthors` (
 
 -- Customers Table [cite: 11]
 CREATE TABLE `Customers` (
-   `CustomerID` INT PRIMARY KEY AUTO_INCREMENT,
+   `CustomerID` INT PRIMARY KEY,
    `Name` VARCHAR(255) NOT NULL,
    `Email` VARCHAR(255) NOT NULL
 );
 
 -- Orders Table [cite: 11]
 CREATE TABLE `Orders` (
-   `OrderID` INT PRIMARY KEY AUTO_INCREMENT,
+   `OrderID` INT PRIMARY KEY,
    `CustomerID` INT,
    `OrderDate` DATE NOT NULL,
    FOREIGN KEY (`CustomerID`) REFERENCES `Customers`(`CustomerID`)
@@ -46,4 +48,3 @@ CREATE TABLE `OrderDetails` (
    FOREIGN KEY (`OrderID`) REFERENCES `Orders`(`OrderID`),
    FOREIGN KEY (`ISBN`) REFERENCES `Books`(`ISBN`)
 );
-
