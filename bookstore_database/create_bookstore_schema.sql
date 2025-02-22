@@ -31,7 +31,7 @@ CREATE TABLE `Customers` (
 
 -- Orders Table [cite: 11]
 CREATE TABLE `Orders` (
-   `OrderID` INT PRIMARY KEY,
+   `OrderID` INT PRIMARY KEY AUTO_INCREMENT,
    `CustomerID` INT,
    `OrderDate` DATE NOT NULL,
    FOREIGN KEY (`CustomerID`) REFERENCES `Customers`(`CustomerID`)
